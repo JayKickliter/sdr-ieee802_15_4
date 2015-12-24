@@ -7,6 +7,8 @@ enum radio_status
 {
     radio_status_ok = 0,
     radio_status_err,
+    radio_status_invalid_parameter,
+    radio_status_no_match,
 };
 
 enum radio_band

@@ -1,20 +1,20 @@
 #include <liquid/liquid.h>
 #include "radio_util.h"
 #include "radio.h"
+#include "greatest.h"
 
-static modem modulator;
-static modem demodulator;
 
-int main (int argc, char const *argv[])
+SUITE_EXTERN(dsss);
+SUITE_EXTERN(util);
+
+GREATEST_MAIN_DEFS();
+
+int main (int argc, char ** argv)
 {
-    modulator = modem_create(LIQUID_MODEM_DPSK2);
-    NULLCHECK(modulator);
+    GREATEST_MAIN_BEGIN();
 
-    demodulator = modem_create(LIQUID_MODEM_DPSK2);
-    NULLCHECK(demodulator);
+    RUN_SUITE(dsss);
+    RUN_SUITE(util);
 
-    out:
-    modem_destroy(modulator);
-    modem_destroy(demodulator);
-    return 0;
+    GREATEST_MAIN_END();
 }

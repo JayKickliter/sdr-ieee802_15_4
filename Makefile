@@ -12,6 +12,7 @@ LIBS      = liquid
 CFLAGS  = -Wall
 CFLAGS += -Wno-unused-label
 CFLAGS += -O0
+CFLAGS += -std=c99
 
 all: $(BUILDDIR) $(PRODUCT)
 
