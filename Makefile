@@ -1,4 +1,4 @@
-.PHONY: all clean
+.PHONY: all clean test
 
 CC        = cc
 BUILDDIR  = build
@@ -28,3 +28,6 @@ build:
 clean:
 	rm -f $(PRODUCT)
 	rm -rf $(BUILDDIR)
+
+test: $(PRODUCT)
+	$(PRODUCT)
